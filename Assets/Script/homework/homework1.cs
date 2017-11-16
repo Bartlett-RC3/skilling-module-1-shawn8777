@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿//Homework 1
+//Declare a int variable and set a value
+//Declare a float variable and set a value
+//Declare a string variable and set a value
+//Create a function that prints the declared variables
+//Declare and initialize an array
+//Declare and initialize a list
+//Create and initialize a Dictionary.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -57,7 +66,7 @@ public class homework1 : MonoBehaviour {
             //  Debug.Log("Last monthname " + monthnames[monthnames.Count-1]);
 
             Debug.Log("bankname in paper1 " + banknames["paper1"]);
-            Debug.Log("paper 2 filled " + banknames.ContainsKey("paper2"));
+            Debug.Log("paper2 filled " + banknames.ContainsKey("paper2"));
         }
     }
 	
