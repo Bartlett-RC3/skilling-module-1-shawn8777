@@ -8,25 +8,26 @@ using UnityEngine;
 public class homework3 : MonoBehaviour
 {
     public GameObject flyCube;
+    
     bool moveLeft = true;
     bool moveRight = false;
     int counter = 0;
-    public float movespeed;
+    
 
 
 
     // Use this for initialization
     void Start()
     {
-        
+      
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
-        counter = counter + 2;
+       
+        counter = counter + 1;
         if (counter % 2 == 0)
         {
             Debug.Log("Time in frames is: " + counter / 2);
@@ -35,9 +36,9 @@ public class homework3 : MonoBehaviour
         {
             if (moveLeft == true)
             {
-                if (counter <= 11)
+                if (counter <= 80)
                 {
-                    this.gameObject.GetComponent<Transform>().position = new Vector3(counter * (-1), 0, 0);
+                    this.gameObject.GetComponent<Transform>().position = new Vector3(counter*(-2) , 3, 0);
                     counter++;
                 }
 
@@ -51,9 +52,9 @@ public class homework3 : MonoBehaviour
         }
         if (moveRight == true)
         {
-            if (counter > 11)
+            if (counter > 80)
             {
-                gameObject.transform.Translate(Vector3.left);
+                this.gameObject.GetComponent<Transform>().position = new Vector3(counter * 2, 3, 0);
                 counter++;
             }
             else
@@ -65,9 +66,9 @@ public class homework3 : MonoBehaviour
         }
         if (moveLeft == true)
         {
-            if (counter <= 9)
+            if (counter <= 80)
             {
-                gameObject.transform.Translate(Vector3.left);
+                gameObject.transform.Translate(Vector3.right);
                 counter++;
             }
             else
@@ -78,9 +79,9 @@ public class homework3 : MonoBehaviour
             }
             if (moveRight == true)
             {
-                if (counter > 9)
+                if (counter > 80)
                 {
-                    gameObject.transform.Translate(Vector3.right);
+                    gameObject.transform.Translate(Vector3.left);
                     counter++;
                 }
                 else
@@ -91,6 +92,8 @@ public class homework3 : MonoBehaviour
                 }
             }
         }
+       
+
     }
 }
     
