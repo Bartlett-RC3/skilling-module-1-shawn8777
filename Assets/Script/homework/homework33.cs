@@ -7,38 +7,37 @@ public class homework33 : MonoBehaviour {
     public float movespeed;
     public Material[] materials;
     public Renderer rend;
-    private int index = 1;
+    
 
 	// Use this for initialization
 	void Start () {
         movespeed = 7f;
         rend = GetComponent<Renderer>();
         rend.enabled = true;
-	}
+        rend.sharedMaterial = materials[0];
+    }
 	
 	// Update is called once per frame
-	void Update () {
-        gameObject.transform.Translate(movespeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, movespeed * Input.GetAxis("Vertical") * Time.deltaTime);
-    }
-    private void OnMouseDown()
+	
+    private void Update()
     {
-        if (materials.Length == 0)
+        if (Input.GetKey(KeyCode.W))
         {
-            return;
+            rend.sharedMaterial = materials[0];
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.A))
         {
-            index += 1;
-
-        if(index == materials.Length + 1) 
-            {
-                index = 1;
-            }
-
-           
-
+            rend.sharedMaterial = materials[1];
         }
-        Debug.Log(index);
-        rend.sharedMaterial = materials[index - 1];
+        if (Input.GetKey(KeyCode.S))
+        {
+            rend.sharedMaterial = materials[2];
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rend.sharedMaterial = materials[3];
+        }
+        gameObject.transform.Translate(movespeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, movespeed * Input.GetAxis("Vertical") * Time.deltaTime);
+        
     }
 }
