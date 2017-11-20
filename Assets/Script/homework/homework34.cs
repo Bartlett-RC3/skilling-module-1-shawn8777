@@ -6,7 +6,7 @@ public class homework34 : MonoBehaviour
 {
     public Material[] materials;
     public Renderer rend;
-    private int index = 1;
+    
     
 
     // Use this for initialization
